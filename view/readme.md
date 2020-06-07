@@ -1,3 +1,3 @@
-# Basicgram View
-> An example of Node + Express (API), with VueJS (frontend), using TypeScript.
+# JS Modern development
 
+[READ MORE](https://dev.to/ahmedash95/webpack-vue-tailwind-typescript-for-2020-l9d)
