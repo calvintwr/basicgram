@@ -41,7 +41,7 @@ export default {
                 }, 
                 {
                     icon: 'fa-user',
-                    label: 'Home',
+                    label: 'Profile',
                     page: profile,
                     key: "profile"
                 }, 
