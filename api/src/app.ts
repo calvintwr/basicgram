@@ -8,7 +8,18 @@ import cookieParser = require('cookie-parser')
 import logger = require ('morgan')
 // @ts-ignore
 import Magic = require('express-routemagic')
+import cors from 'cors'
+
 const app: express.Application = express()
+
+// enable cors
+app.use(cors({
+    credentials: true,
+    origin: true,
+    methods: ['GET, HEAD, PUT, PATCH, POST, DELETE'],
+    maxAge: 31536000000000,
+    preflightContinue: true
+}))
 
 // view engine setup
 app.set('views', join(__dirname, 'views'))
@@ -19,6 +30,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(join(__dirname, 'public')))
 Magic.use(app, { invokerPath: __dirname, logMapping: true }) // need to use `invokerPath` because we are not in root dir.
+
+
 // catch 404 and forward to error handler
 app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
     next(createError(404))

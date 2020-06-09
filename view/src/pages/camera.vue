@@ -1,8 +1,9 @@
 <template>
     <v-ons-page>
-        <p style="text-align: center">
-            Camera
-        </p>
+        <div class="containersm mx-auto p-1">
+            <input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput">
+        </div>
+        
     </v-ons-page>
 </template>
 

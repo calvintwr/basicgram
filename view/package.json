@@ -35,10 +35,12 @@
         "onsenui": "^2.10.10",
         "postcss": "^7.0.32",
         "postcss-loader": "^3.0.0",
+        "superagent": "^5.2.2",
         "tailwindcss": "^1.4.6",
         "vue": "^2.6.11",
         "vue-onsenui": "^2.6.2",
         "vue-router": "^3.3.2",
-        "vuex": "^3.4.0"
+        "vuex": "^3.4.0",
+        "you-are-not": "^0.5.3"
     }
 }

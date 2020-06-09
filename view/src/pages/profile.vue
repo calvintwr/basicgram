@@ -1,7 +1,7 @@
 <template>
     <v-ons-page>
         <p style="text-align: center">
-            Profile
+            {{ userName }}'s Profile
         </p>
     </v-ons-page>
 </template>
@@ -10,6 +10,11 @@
 import Vue from "vue"
 
 export default {
+    props: {
+        userName: {
+            type: String
+        }
+    },
     data() {
         return {}
     }

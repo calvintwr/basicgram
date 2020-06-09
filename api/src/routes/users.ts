@@ -1,4 +1,5 @@
 import express from 'express'
+import { Duplex } from 'stream'
 const router = express.Router()
 const Not = require('you-are-not')
 const not = Not.create()
@@ -15,18 +16,25 @@ router.get('/', function (req: express.Request, res: express.Response, next: exp
     })
 })
 
-router.put('/add', function (req: express.Request, res: express.Response, next: express.NextFunction) {
+router.post('/add', function (req: express.Request, res: express.Response, next: express.NextFunction) {
 
     not('string', req.body.name)
-    
-    DB.User.create({
-        name: req.body.name
-    }).then((result: any) => {
-        console.log(result)
-        res.send(result)
+
+    // most of the time, you will need findOrCreate
+    // as users may attempt to create a user account
+    // with a username or email that already exist
+    return DB.User.findOrCreate({
+        where: {
+            name: req.body.name
+        }
+    }).then((user: any) => {
+        // #findOrCreate returns an array [user, created (true or false)]
+        console.log(user)
+        res.send(user[0])
     }).catch((err: Error) => {
         next(err)
     })
+
 })
 
 module.exports = router
