@@ -15,7 +15,7 @@ router.get('/', function (req: express.Request, res: express.Response, next: exp
     })
 })
 
-router.put('/add', function (req: express.Request, res: express.Response, next: express.NextFunction) {
+router.post('/add', function (req: express.Request, res: express.Response, next: express.NextFunction) {
 
     not('string', req.body.name)
     
