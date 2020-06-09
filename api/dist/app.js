@@ -11,6 +11,9 @@ const logger = require("morgan");
 // @ts-ignore
 const Magic = require("express-routemagic");
 const app = express();
+// import DB from './models/index'
+// // @ts-ignore
+// global.DB = DB
 // view engine setup
 app.set('views', path_1.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

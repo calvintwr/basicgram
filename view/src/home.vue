@@ -35,7 +35,7 @@ export default {
                 }, 
                 {
                     icon: 'fa-camera',
-                    label: 'Home',
+                    label: 'Camera',
                     page: camera,
                     key: "camera"
                 }, 
@@ -50,7 +50,7 @@ export default {
     },
     computed: {
         title() {
-            return this.tabs[this.activeIndex].label === 'Home' ? 'Basicgram' : this.tabs[this.activeIndex].label === 'Home'
+            return this.tabs[this.activeIndex].label === 'Home' ? 'Basicgram' : this.tabs[this.activeIndex].label
         }
     }
 }
