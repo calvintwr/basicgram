@@ -1,4 +1,5 @@
 import express from 'express'
+import { Duplex } from 'stream'
 const router = express.Router()
 const Not = require('you-are-not')
 const not = Not.create()
@@ -18,7 +19,7 @@ router.get('/', function (req: express.Request, res: express.Response, next: exp
 router.post('/add', function (req: express.Request, res: express.Response, next: express.NextFunction) {
 
     not('string', req.body.name)
-    
+
     // most of the time, you will need findOrCreate
     // as users may attempt to create a user account
     // with a username or email that already exist
@@ -34,6 +35,7 @@ router.post('/add', function (req: express.Request, res: express.Response, next:
     }).catch((err: Error) => {
         next(err)
     })
+
 })
 
 module.exports = router
