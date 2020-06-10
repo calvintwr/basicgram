@@ -26,9 +26,10 @@ router.post('/add', function (req: express.Request, res: express.Response, next:
         where: {
             name: req.body.name
         }
-    }).then((user: any) => {
+    }).then((user: any, created: boolean) => {
         // #findOrCreate returns an array [user, created (true or false)]
         console.log(user)
+        if (created) res.status(201)
         res.send(user[0])
     }).catch((err: Error) => {
         next(err)
