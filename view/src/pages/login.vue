@@ -80,7 +80,7 @@ export default {
                     }
 
                     console.log(res)
-                    this.$emit('login-success', res.body.name)
+                    this.$emit('login-success', res.body)
 
                 })
 

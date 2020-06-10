@@ -13,6 +13,9 @@ export default {
     props: {
         userName: {
             type: String
+        },
+        userID: {
+            type: Number
         }
     },
     data() {
