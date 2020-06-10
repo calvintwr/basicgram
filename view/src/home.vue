@@ -70,9 +70,10 @@ export default {
         // this is the loginView method triggered by @login-success event ⬆️
         loginView(userName) {
             // this.tabs[2] passes the userName to the `profile` tab child component
+            // this.tabs[1] passes the userName to the `camera` tab child component
             // a child passes data to a parent by events ($emit)
             // a parent passes date to child by `props
-            this.userName = this.tabs[2].props.userName = userName
+            this.userName = this.tabs[2].props.userName = this.tabs[1].props.userName = userName
             this.isLoggedIn = true
         }
     },
