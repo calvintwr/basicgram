@@ -28,7 +28,7 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
-app.use(express.static(join(__dirname, 'public')))
+app.use(express.static(join(__dirname, '../public')))
 Magic.use(app, { invokerPath: __dirname, logMapping: true }) // need to use `invokerPath` because we are not in root dir.
 
 

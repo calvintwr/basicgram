@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     image: DataTypes.STRING
   }, {});
   Post.associate = function(models) {
-    Post.belongsTo(models.User)
+    Post.belongsTo(models.User, { foreignKey: 'User_userID' })
   };
   return Post;
 };

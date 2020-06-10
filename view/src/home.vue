@@ -7,7 +7,8 @@
                 </v-ons-toolbar>
 
                 <v-ons-tabbar 
-                    swipeable position="auto" 
+                    swipeable
+                    position="auto" 
                     :tabs="tabs" 
                     :visible="true" 
                     :index.sync="activeIndex"
@@ -37,20 +38,34 @@ export default {
     data() {
         return {
             isLoggedIn: false,
-            userName: '',
+            userName: { type: String },
+            userID: { type: Number },
             activeIndex: 0,
             tabs: [
                 {
                     icon: 'fa-home',
                     label: 'Home',
                     page: homePage,
-                    key: "homePage"
+                    key: "homePage",
+                    props: {
+                        userID: {
+                            type: Number // specify typing
+                        }
+                    }
                 }, 
                 {
                     icon: 'fa-camera',
                     label: 'Camera',
                     page: camera,
-                    key: "camera"
+                    key: "camera",
+                    props: {
+                        userName: {
+                            type: String // specify typing
+                        },
+                        userID: {
+                            type: Number // specify typing
+                        }
+                    }
                 }, 
                 {
                     icon: 'fa-user',
@@ -60,6 +75,9 @@ export default {
                     props: {
                         userName: {
                             type: String // specify typing
+                        },
+                        userID: {
+                            type: Number // specify typing
                         }
                     }
                 }, 
@@ -68,11 +86,12 @@ export default {
     },
     methods: {
         // this is the loginView method triggered by @login-success event ⬆️
-        loginView(userName) {
+        loginView(user) {
             // this.tabs[2] passes the userName to the `profile` tab child component
             // a child passes data to a parent by events ($emit)
             // a parent passes date to child by `props
-            this.userName = this.tabs[2].props.userName = userName
+            this.userName = this.tabs[2].props.userName = this.tabs[1].props.userName = user.name
+            this.userID = this.tabs[2].props.userID = this.tabs[1].props.userID = this.tabs[0].props.userID = user.id
             this.isLoggedIn = true
         }
     },
