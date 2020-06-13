@@ -23,7 +23,7 @@ app.use((req: express.Request, res: express.Response, next: express.NextFunction
     next(createError(404))
 })
 // error handler
-app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
     // set locals, only providing error in development
     res.locals.message = err.message
     res.locals.error = req.app.get('env') === 'development' ? err : {}
