@@ -18,7 +18,7 @@ Not.defineType({
     }
 })
 
-router.post('/add', function (req: express.Request, res: express.Response, next: express.NextFunction) {
+router.post('/add', (req: express.Request, res: express.Response, next: express.NextFunction) => {
 
     const form = formidable({ multiples: true })
 
@@ -76,7 +76,7 @@ router.post('/add', function (req: express.Request, res: express.Response, next:
     })
 })
 
-router.get('/own', function (req: express.Request, res: express.Response, next: express.NextFunction) {
+router.get('/own', (req: express.Request, res: express.Response, next: express.NextFunction) => {
 
     // for GET, the standard is to use querystring.
     // so it will be `req.query` instead of `req.body`
@@ -94,7 +94,7 @@ router.get('/own', function (req: express.Request, res: express.Response, next: 
     })
 })
 
-router.get('/feed', function (req: express.Request, res: express.Response, next: express.NextFunction) {
+router.get('/feed', (req: express.Request, res: express.Response, next: express.NextFunction) => {
 
     not('parseable-string', req.query.userID)  
 
