@@ -68,7 +68,6 @@ router.post('/add', function (req: express.Request, res: express.Response, next:
             image: fileName,
             caption: params.caption
         }).then((post: any) => {
-            // #findOrCreate returns an array [user, created (true or false)]
             console.log(post)
             res.status(201).send(post)
         }).catch((err: Error) => {
