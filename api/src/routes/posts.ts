@@ -56,7 +56,7 @@ router.post('/add', function (req: express.Request, res: express.Response, next:
     })
 
     form.on('error', (err: Error) => {
-        res.status(500).send({ message: err.message })
+        next(err) // bubbble the error to express middlewares
     })
 
     // we let the file upload process complete before we create the db entry.
