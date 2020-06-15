@@ -18,7 +18,7 @@ router.get('/', function (req: express.Request, res: express.Response, next: exp
 
 router.post('/add', function (req: express.Request, res: express.Response, next: express.NextFunction) {
 
-    not('string', req.body.name)
+    not('string', req.body.name, 'User Name', 'Please check your entry')
 
     // most of the time, you will need findOrCreate
     // as users may attempt to create a user account
