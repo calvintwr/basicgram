@@ -6,11 +6,11 @@
                     <div class="center">{{ title }}</div>
                 </v-ons-toolbar>
 
-                <v-ons-tabbar 
+                <v-ons-tabbar
                     swipeable
-                    position="auto" 
-                    :tabs="tabs" 
-                    :visible="true" 
+                    position="auto"
+                    :tabs="tabs"
+                    :visible="true"
                     :index.sync="activeIndex"
                 >
                 </v-ons-tabbar>
@@ -52,7 +52,7 @@ export default {
                             type: Number // specify typing
                         }
                     }
-                }, 
+                },
                 {
                     icon: 'fa-camera',
                     label: 'Camera',
@@ -66,7 +66,7 @@ export default {
                             type: Number // specify typing
                         }
                     }
-                }, 
+                },
                 {
                     icon: 'fa-user',
                     label: 'Profile',
@@ -80,7 +80,7 @@ export default {
                             type: Number // specify typing
                         }
                     }
-                }, 
+                },
             ]
         }
     },
