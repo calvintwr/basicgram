@@ -1,6 +1,8 @@
 # Basicgram
 > An example of Node + Express (API), with VueJS (frontend), using TypeScript.
 
+![An example of Node + Express (API), with VueJS (frontend), using TypeScript.](https://user-images.githubusercontent.com/6825277/87942294-f6264b80-cace-11ea-8e08-61b134cd1735.gif)
+
 ## Tutorials
 
 This repo is for a 5-part tutorial. Albeit this is a web-app, the skills and concept are easily transferable to mobile apps (NativeScript) or desktop apps (Electron), which I will write tutorials on if this series proved popular and useful.
